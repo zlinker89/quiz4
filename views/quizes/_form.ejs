@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <label for="preg" class="rem">Pregunta:</label>
+        <input type="text" name="quiz[pregunta]" id="preg" value="<%= quiz.pregunta %>"/>
+        <br><br>
+        <label for="res" class="rem">Respuesta:</label>
+        <input type="text" name="quiz[respuesta]" id="res" value="<%= quiz.respuesta %>"/>
+        <br><br>
+        Tema anterior: <%= quiz.tema %>
+        <br><br>
+        <select name="quiz[tema]">
+          <option value="otro" selected>Otro</option>
+          <option value="humanidades">Humanidades</option>
+          <option value="ocio">Ocio</option>
+          <option value="ciencia">Ciencia</option>
+          <option value="tecnologia">Tecnología</option>
+        </select>
+        <br><br>
+        <a href="/quizes"><button type="button">Cancelar</button></a>
+        <input type="submit" value="Salvar">
+    </body>
+</html>

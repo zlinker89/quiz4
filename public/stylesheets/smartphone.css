@@ -1,0 +1,29 @@
+#page-wrap:after{
+    content: "Smartphone Layout";
+}
+
+section h1{
+    display: none;
+}
+body{
+    font-size: xx-large; 
+}
+
+footer, input{
+    font-size: large; 
+}
+#imagen{
+    width: 100%;
+    height: 200px;
+}
+table{
+    font-size: 12px !important;
+}
+section{
+    height: 600px;
+}
+#ErrorMsg{
+    top: 560px;
+    right: 120px;
+    font-size: 14px !important;
+}

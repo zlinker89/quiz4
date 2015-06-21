@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>lista de preguntas</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Buscar preguntas</legend>
+            <br>
+            <form action="/quizes" method="get">
+                <input type="search" name="search">
+                <input type="submit" value="Buscar">
+            </form>
+            <br>
+        </fieldset>
+        <table>
+            <% if(quizes.length == 0){%>
+            <h2>No se ha encontrado la pregunta</h2>
+
+            <%
+            }else{
+            var i; for(i=0; i < quizes.length;i++){%>
+                <tr>
+                    <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+                    <td><a href="quizes/<%= quizes[i].id %>/edit"><button type="button">Editar</button></a></td>
+                    <td><form action="quizes/<%= quizes[i].id %>?_method=delete" method="post">
+                        <button type="submit" onclick="return confirm('Borrar: <%= quizes[i].pregunta %>');">Borrar</button>
+                    </form></td>
+                </tr>
+            <%}
+            }%>
+        </table>
+        <a href="/quizes/new"><button type="button">Crear Pregunta</button></a>
+    </body>
+</html>

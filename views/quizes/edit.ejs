@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        Edite la pregunta <br>
+        <form action="/quizes/<%= quiz.id %>?_method=put" method="post">
+            <% include _form.ejs %>
+        </form>
+    </body>
+</html>
