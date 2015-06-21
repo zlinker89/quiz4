@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<html lang="es-Co">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        Añadir comentario:
+        <form action="/quizes/<%= quizid %>/comments" method="post">
+            <input type="text" id="comment" name="comment[texto]" value="">
+            <button type="submit">Enviar</button>
+        </form>
+    </body>
+</html>
