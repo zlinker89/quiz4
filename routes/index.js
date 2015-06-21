@@ -2,14 +2,21 @@ var express = require('express');
 var router = express.Router();
 var quizController = require("../controllers/quiz_controller");
 var commentController = require("../controllers/comment_controller");
+var sessionController = require("../controllers/session_controller");
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Quiz', errors: [] });
+  res.render('index', { title: 'Quiz', errors: []});
 });
 
 // autoload
 router.param("quizId", quizController.load);
+
+/* definicion de rutas de session */
+router.get('/login', sessionController.new); // formulario login
+router.post('/login', sessionController.create); // crear session
+router.get('/logout', sessionController.destroy); // destruir session
+
 /* quizes */
 router.get("/quizes", quizController.index);
 router.get("/quizes/:quizId(\\d+)", quizController.show);

@@ -16,3 +16,7 @@ footer{
     clear: both;
     display: block;
 }
+.field > input{
+  width: 40%;
+  text-align: center;
+}

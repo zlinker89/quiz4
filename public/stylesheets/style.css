@@ -1,6 +1,18 @@
 *{margin: 0; padding: 0;}
 section{height: 500px;}
 td{padding: 4px;}
+
+.right{
+  float: right;
+}
+.field{
+  padding: 5px;
+  width: 90%;
+}
+.field > input{
+  width: 100%;
+  text-align: center;
+}
 body {
   padding: 50px;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
