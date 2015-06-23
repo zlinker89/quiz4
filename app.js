@@ -30,6 +30,7 @@ app.use(session());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+/*------------------------control de session --------------------*/
 app.use('*',function(req,res,next){
 	if(req.session.user){
 			var tiempo_inactivo;
@@ -37,7 +38,7 @@ app.use('*',function(req,res,next){
 			req.session.t2 = new Date().getTime();
 
 			tiempo_inactivo = req.session.t2 - req.session.t1;
-			console.log("\n\n\n\n\nEste es el tiempo " + tiempo_inactivo/1000 + "\n\n\n\n");
+			//console.log("\n\n\n\n\nEste es el tiempo " + tiempo_inactivo/1000 + "\n\n\n\n");
 		
 		if(tiempo_inactivo > 120000){
 				delete req.session.user;
